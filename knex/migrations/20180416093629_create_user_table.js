@@ -3,11 +3,7 @@ exports.up = function(knex, Promise) {
     table.increments("user_id");
     table.string("email").notNullable();
     table.string("password").notNullable();
-    table
-      .timestamp("created_at")
-      .defaultTo(knex.fn.now())
-      .notNullable();
-    table.timestamp("updated_at").defaultTo(null);
+    table.timestamps();
     table
       .boolean("deleted")
       .defaultTo(false)

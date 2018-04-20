@@ -6,11 +6,7 @@ exports.up = function(knex, Promise) {
       .integer("user_id")
       .references("user_id")
       .inTable("user");
-    table
-      .timestamp("created_at")
-      .defaultTo(knex.fn.now())
-      .notNullable();
-    table.timestamp("updated_at").defaultTo(null);
+    table.timestamps();
     table
       .boolean("deleted")
       .defaultTo(false)
