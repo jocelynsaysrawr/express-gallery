@@ -1,12 +1,19 @@
 <div class="main">
-    <h1>Express Gallery</h1>
-    <div class="login">
-        <h2>Login or Register</h2>
+    <h1 class="header-title-primary">_Architekt</h1>
+    <div class="login-box">
+        <h2 class="header-title-secondary">Login or Register</h2>
         <form action="/auth/login" method="post">
-            <input type="email" name="email" class="text-box">
-            <input type="password" name="password" class="text-box">
-            <button type="submit" class="btn-login">Login</button>
-            <button type="submit" formaction="/auth/register" formmethod="post" class="btn-register">Register</button>
+            <div class="row">
+                <input type="email" name="email" class="text-box" placeholder="email">
+            </div>
+            <div class="row">
+                <input type="password" name="password" class="text-box" placeholder="password">
+            </div>
+            <div class="row">
+                <button type="submit" class="btn-login">Login</button>
+                <button type="submit" formaction="/auth/register" formmethod="post" class="btn-register">Register</button>
+            </div>
+
         </form>
     </div>
 </div>
