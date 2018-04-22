@@ -86,4 +86,93 @@ input[type="checkbox"] {
   top: 0px;
   cursor: pointer;
   z-index: 200;
+  user-select: none;
+  transform-origin: 110px 0px;
+  transform: scale(0.6);
+  transition: background 0.3s linear;
+}
+
+.nav-burger.open {
+  background: #222;
+}
+
+.nav-burger.close {
+  background: transparent;
+}
+
+.line {
+  display: block;
+  position: absolute;
+  width: 80px;
+  height: 8px;
+  background: #fff;
+  left: 15px;
+  transform-origin: 0px 4px;
+  transition: opacity 0.3s $ease-in-out-cubic 0s,
+    transform 0.24s $ease-in-out-cubic 0s;
+}
+
+@for $i from 1 through 3 {
+  .line:nth-child(#{$i}) {
+    top: 16px + (($i)-1) * 28;
+  }
+}
+
+nav {
+  pointer-events: none;
+  ul,
+  li {
+    display: block;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  ul {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+
+  li {
+    height: 25%;
+    position: relative;
+    background: $color-blue-forest;
+    color: #fff;
+    font-family: "Lato", sans-serif;
+  }
+}
+
+nav li:hover {
+  background: $color-burgundy;
+}
+
+@for $i from 4 through 1 {
+  nav li:nth-child(#{$i}) {
+    transition: transform 0.3s $ease-in-cubic (0.05s * (4-$i)),
+      opacity 0.3s linear(0.05s * (4-$i));
+  }
+}
+
+nav li {
+  transform: translateY(300%);
+  opacity: 0;
+}
+
+.nav-line a {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  height: 16px;
+  top: 50%;
+  margin-top: -8px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 1.5em;
+  letter-spacing: 3px;
+  color: $color-light-grey;
 }

@@ -2,7 +2,6 @@ const gulp = require("gulp");
 const bourbon = require("bourbon").includePaths;
 const scss = require("gulp-sass");
 const browserSync = require("browser-sync");
-const connect = require("gulp-connect");
 
 browserSync.init({
   proxy: "localhost:8080"
@@ -17,8 +16,7 @@ gulp.task("scss", function() {
         includePaths: [bourbon]
       })
     )
-    .pipe(gulp.dest("./public/css"))
-    .pipe(connect.reload());
+    .pipe(gulp.dest("./public/css"));
 });
 
 gulp.task("watch", function() {

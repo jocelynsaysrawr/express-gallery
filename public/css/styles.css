@@ -64,4 +64,88 @@ input[type="checkbox"] {
   right: 0px;
   top: 0px;
   cursor: pointer;
-  z-index: 200; }
+  z-index: 200;
+  user-select: none;
+  transform-origin: 110px 0px;
+  transform: scale(0.6);
+  transition: background 0.3s linear; }
+
+.nav-burger.open {
+  background: #222; }
+
+.nav-burger.close {
+  background: transparent; }
+
+.line {
+  display: block;
+  position: absolute;
+  width: 80px;
+  height: 8px;
+  background: #fff;
+  left: 15px;
+  transform-origin: 0px 4px;
+  transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 0.24s cubic-bezier(0.645, 0.045, 0.355, 1) 0s; }
+
+.line:nth-child(1) {
+  top: 16px; }
+
+.line:nth-child(2) {
+  top: 44px; }
+
+.line:nth-child(3) {
+  top: 72px; }
+
+nav {
+  pointer-events: none; }
+  nav ul,
+  nav li {
+    display: block;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    cursor: pointer; }
+  nav ul {
+    height: 100%;
+    width: 100%;
+    position: absolute; }
+  nav li {
+    height: 25%;
+    position: relative;
+    background: #303135;
+    color: #fff;
+    font-family: "Lato", sans-serif; }
+
+nav li:hover {
+  background: #522a33; }
+
+nav li:nth-child(4) {
+  transition: transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0s, opacity 0.3s linear(0s); }
+
+nav li:nth-child(3) {
+  transition: transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.05s, opacity 0.3s linear(0.05s); }
+
+nav li:nth-child(2) {
+  transition: transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.1s, opacity 0.3s linear(0.1s); }
+
+nav li:nth-child(1) {
+  transition: transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.15s, opacity 0.3s linear(0.15s); }
+
+nav li {
+  transform: translateY(300%);
+  opacity: 0; }
+
+.nav-line a {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  height: 16px;
+  top: 50%;
+  margin-top: -8px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 1.5em;
+  letter-spacing: 3px;
+  color: #707481; }

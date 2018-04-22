@@ -1,34 +1,36 @@
-<h1>User Portal</h1>
 <!--Navigation Closed w/Hamburger-->
 <input type="checkbox" id="nav-burger-trigger" />
-<label for="nav-burger-trigger" class="nav-burger">
+<label for="nav-burger-trigger" class="nav-burger open">
     <span class="line"></span>
     <span class="line"></span>
     <span class="line"></span>
 </label>
 
 <!-- Navigation Opened-->
-<div class="navigation-open">
-    <nav class="open">
-        <ul>
-            <li>
-                <span class="nav-line">
-                    <a href="#gallery">Galleries</a>
-                </span>
-            </li>
-            <li>
-                <span class="nav-line">
-                    <a href="#newPhoto">Add Photo</a>
-                </span>
-            </li>
-            <li>
-                <span class="nav-line">
-                    <a href="#Edit">Edit</a>
-                </span>
-            </li>
-        </ul>
-    </nav>
 
-</div>
+<nav class="nav-open">
+    <ul>
+        <li>
+            <span class="nav-line">
+                <a href="#gallery">Galleries</a>
+            </span>
+        </li>
+        <li>
+            <span class="nav-line">
+                <a href="#newPhoto">Add Photo</a>
+            </span>
+        </li>
+        <li>
+            <span class="nav-line">
+                <a href="#Edit">Edit</a>
+            </span>
+        </li>
+        <li>
+            <span class="nav-line">
+                <a href="/auth/logout" method="post">Logout</a>
+            </span>
+        </li>
+    </ul>
+</nav>
 
-<a href="/auth/logout" method="post">Logout</a>
+<h1>User Portal</h1>
