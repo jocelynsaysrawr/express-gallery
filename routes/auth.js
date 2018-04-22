@@ -62,8 +62,7 @@ router.post("/auth/register", (req, res) => {
       return User.forge({ email, password: hash }).save();
     })
     .then(user => {
-      user = user.toJSON();
-      res.json(user);
+      return res.redirect("/users/portal");
     })
     .catch(err => {
       console.log("err: ", err);
@@ -75,7 +74,13 @@ router.post(
   "/auth/login",
   passport.authenticate("local", { failureRedirect: "/" }),
   (req, res) => {
-    res.send("Happy Dance! You're in!");
+    console.log("req: ", req.body);
+    return res.redirect("/users/portal");
     //res.render("gallery");
   }
 );
+
+router.get("/auth/logout", (req, res) => {
+  req.logout();
+  return res.redirect("/");
+});

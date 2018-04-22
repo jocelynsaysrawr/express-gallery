@@ -1,4 +1,5 @@
 @import "partials/colors";
+@import "bourbon";
 
 * {
   margin: 0;
@@ -40,4 +41,49 @@
       color: $color-light-grey;
     }
   }
+}
+
+input[type="checkbox"] {
+  display: none;
+  //open nav menu
+  &:checked {
+    + label + nav {
+      pointer-events: auto;
+      li {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      @for $i from 1 through 5 {
+        li:nth-child(#{$i}) {
+          transition: transform 0.5s $ease-out-cubic (0.1s * $i),
+            opacity 0.5s linear(0.1s * $i);
+        }
+      }
+    }
+
+    //burger lines
+    + label .line {
+      &:nth-child(1) {
+        transform: translateX(11px) rotate(45deg);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        transform: translateX(11px) rotate(-45deg);
+      }
+    }
+  }
+}
+
+.nav-burger {
+  position: fixed;
+  background-color: black;
+  width: 110px;
+  height: 98px;
+  right: 0px;
+  top: 0px;
+  cursor: pointer;
+  z-index: 200;
 }
