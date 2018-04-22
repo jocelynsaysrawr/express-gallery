@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const User = require("../knex/models/User");
+const User = require("../knex/models/user");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const bcrypt = require("bcrypt");

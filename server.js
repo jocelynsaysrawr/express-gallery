@@ -12,7 +12,7 @@ const handlebars = exphbs.create({
   defaultLayout: "main",
   extname: ".hbs"
 });
-const User = require("./knex/models/User");
+const User = require("./knex/models/user");
 const Photo = require("./knex/models/Photo");
 const Gallery = require("./knex/models/Gallery");
 const authorization = require("./routes/auth");

@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const User = require("../knex/models/User");
+const User = require("../knex/models/user");
 const { isAuthenticated } = require("../utilities");
 module.exports = router;
 
