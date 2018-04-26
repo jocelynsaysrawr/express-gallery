@@ -1,5 +1,7 @@
 const router = require("express").Router();
 const User = require("../knex/models/user");
+const Gallery = require("../knex/models/Gallery");
+const Photo = require("../knex/models/photo");
 const { isAuthenticated } = require("../utilities");
 module.exports = router;
 
@@ -13,6 +15,21 @@ router.get("/", (req, res) => {
 });
 
 router.get("/users/portal", isAuthenticated, (req, res) => {
-  console.log("req user portal: ", req.user);
-  res.render("portal");
+  if (req.isAuthenticated()) {
+    Gallery.getGalleryByUserId(req.user.user_id)
+      .then(data => {
+        console.log("galleries: ", data);
+        return data.map(gallery => {
+          return Photo.getPhotosByGalleryId(gallery.gallery_id);
+        });
+      })
+      .then(promiseList => {
+        return Promise.all(promiseList);
+      })
+      .then(promiseResults => {
+        console.log("promiseResults: ", promiseResults);
+        const results = [].concat.apply([], promiseResults);
+        res.render("portal", { results });
+      });
+  }
 });

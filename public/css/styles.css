@@ -1,5 +1,6 @@
 * {
-  margin: 0; }
+  margin: 0;
+  box-sizing: border-box; }
 
 .main {
   font-family: "Lato", sans-serif;
@@ -149,3 +150,6 @@ nav li {
   font-size: 1.5em;
   letter-spacing: 3px;
   color: #707481; }
+
+.img-preview {
+  width: 300px; }

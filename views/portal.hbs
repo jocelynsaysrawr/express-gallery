@@ -34,3 +34,11 @@
 </nav>
 
 <h1>User Portal</h1>
+{{#each results}}
+<ul>
+    <li>
+        <img src="{{link}}" alt="{{description}}" class="img-preview">
+        <p class="img-description">{{description}}</p>
+    </li>
+</ul>
+{{/each}}

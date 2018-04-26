@@ -7,8 +7,10 @@ const User = bookshelf.Model.extend(
     hasTimestamps: true
   },
   {
-    getUserByEmail: function(email) {
-      return this.where({ email });
+    getUserById: function(user_id) {
+      return this.select()
+        .from("user")
+        .where({ user_id });
     }
   }
 );
